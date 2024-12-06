@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUCATION ⋆｡°✩</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+
+    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="nav.css">   
+    <style>
+        /* Basic Styles */
+       body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('Images/wallpaper.jpeg') no-repeat center center fixed;
+    background-size: cover;
+   
+        color: #f1f1f1;
+    overflow-x: hidden;
+}
+
+        /* Main Content Container */
+        .education-container {
+            width: 100%;
+            margin-top: 80px;
+            padding: 20px 40px;
+            box-sizing: border-box;
+        }
+
+        /* Header Section */
+        .header {
+            margin-bottom: 30px;
+            text-align: center;
+            color: #ff007f;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            color: #00ffe5;
+        }
+
+        .header h2 {
+            font-size: 1.2em;
+            font-weight: normal;
+            color: #ff007f;
+        }
+
+       /* Timeline Layout */
+.timeline {
+    position: relative;
+    margin: 40px 0;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: #00ffe5;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #00ffe5;
+    border-radius: 50%;  
+    transform: translateX(-50%);
+}
+
+.timeline-item:nth-child(odd) {
+    align-items: flex-start;
+}
+
+.timeline-item:nth-child(even) {
+    align-items: flex-end;
+}
+
+.timeline-content {
+    width: 45%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s, box-shadow 0.3s; 
+}
+
+.timeline-content h4 {
+    color: #00ffe5;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    margin: 5px 0;
+    color: #f1f1f1;
+    font-size: 1.1em;
+}
+
+.timeline-content span {
+    font-weight: bold;
+    color: #ff007f;
+}
+
+.timeline-content ol {
+    padding-left: 20px;
+    color: #f1f1f1;
+}
+
+.timeline-content ol li {
+    margin-bottom: 8px;
+}
+
+/* Timeline Content with Hover Effect */
+.timeline-content:hover {
+    transform: translateY(-50px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8); 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline:before {
+        left: 20px;
+    }
+
+    .timeline-item:before {
+        left: 20px;
+    }
+
+    .timeline-content {
+        width: 90%;
+        margin: 0 auto 20px auto;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin: 0;
+    }
+}
+
+/* Default styling for the notification resembling a chat bubble */
+#notification {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    background-color:     #007bff;  
+    color: white;  
+    border-radius: 20px;  
+    padding: 15px 20px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+    opacity: 0;  /* Hidden by default */
+    visibility: hidden;  
+    transition: opacity 0.5s ease, visibility 0.5s ease; 
+      z-index: 9999;  
+}
+
+/* Create the speech bubble tail (triangle) */
+#notification::after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    right: 20px;  
+    border-width: 15px;
+    border-style: solid;
+    border-color: #007bff transparent transparent transparent; 
+}
+
+/* Styling for the "Important Announcement" text */
+.important {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+/* Target the icon specifically */
+.location-icon i.fas {
+    color: #ff4500 !important; /* Force the color change */
+    transition: color 0.3s ease;
+}
+
+/* On hover, change the color */
+.location-icon:hover i.fas {
+    color: #00ffe5 !important;
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="Biodata.html">Biodata</a>
+    <a href="Experience.html">Experience</a>
+    <a href="Education.html">Education</a>
+    <a href="Family.html">Family</a>
+    <a href="Gallery.html">Gallery</a>
+</nav>
+
+<!-- Education Container -->
+<div class="education-container">
+    <!-- Header -->
+    <div class="header">
+        <h1>EDUCATION</h1>
+        <h2><em>"The Journey of Knowledge Never Ends"</em></h2>
+    </div>
+
+    <!-- Timeline Section -->
+    <section id="education">
+        <center><h3 class="section-title">Educational Timeline</h3></center>
+    <div id="notification">
+        <p class="important">Exciting News! 🎉</p>
+        <p>Thrilled to share that I’ll be pursuing a degree in System Management (IMD262)</p>
+    </div>
+       <!-- Notification Sound -->
+<audio id="notification-sound" src="Images/noti.mp3"></audio>
+
+
+
+    <script src="script.js"></script>
+        <!-- Timeline -->
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4>Diploma in Information Management</h4>
+                      <p><span>Institution:</span> 
+                                                <a href="https://maps.app.goo.gl/U6QQGyc4miRNyv9X8" target="_blank" class="location-icon" aria-label="View location on Google Maps">
+                                               <i class="fas fa-map-marker-alt"></i>
+                                               </a>
+                                             <a href="https://johor.uitm.edu.my/" target="_blank" style="color: #00ffe5; text-decoration: none;">
+                                             UiTM Kampus Segamat
+                                             </a>
+                                             </p>
+                    <p><span>Year:</span> 2022 - Now</p>
+                    <p><span>Achievements:</span></p>
+                    <ol>
+                 <li>Dean's List with CGPA: 
+    <ul style="list-style-type: none; padding: 0; display: flex; flex-wrap: wrap;">
+        <li style="margin-right: 20px;"><strong>x<sub>1</sub>:</strong> 1.5</li>
+        <li style="margin-right: 20px;"><strong>x<sub>2</sub>:</strong> 2</li>
+        <li style="margin-right: 20px;"><strong>x<sub>3</sub>:</strong> 3.6</li>
+        </ul>
+    (x<sub>1</sub> * x<sub>2</sub>) + ( x<sub>3</sub> / 4) - 1/2 = <strong>?</strong>
+</li>
+
+                        <li>Successfully led five programs as a Program Director </li>
+                        <li>Certificates with First Class for Jawatankuasa Perwakilan Kolej (JPK)</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4>High School</h4>
+                    <p><span>Institution:</span>
+                    <a href="https://maps.app.goo.gl/FkAKKaAvyonTQ3Hp6" target="_blank" class="location-icon" aria-label="View location on Google Maps">
+                                                 <i class="fas fa-map-marker-alt"></i>
+                                                 </a>
+                                                <a href="https://www.apac.com.my/jea1052-smk-permas-jaya.html" target="_blank" style="color: #00ffe5; text-decoration: none;">
+                                                SMK Permas Jaya
+                                                </a>
+                                               </p>
+                    <p><span>Year:</span> 2017 - 2022</p>
+                    <p><span>Achievements:</span></p>
+                    <ol>
+                        <li>SPM 7A 2B+</li>
+                        <li>Top 2 in Class</li>
+                        <li>Targeted as a straight-A student</li>
+                        <li>Served as the chairman of the cadet police uniformed body</li>
+                        <li>Led the cadet police marching drill team by commanding drills</li>
+                        <li>Won 2<sup>nd</sup> place in the school-level cadet police marching drill competition</li>
+                        <li>Developed a website as part of the Computer Science Final Individual Project</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4>Primary School</h4>
+                    <p><span>Institution:</span>
+                    <a href="https://maps.app.goo.gl/fT4ZzjfE275FvEhd6" target="_blank" class="location-icon" aria-label="View location on Google Maps">
+                                                 <i class="fas fa-map-marker-alt"></i>
+                                                 </a>
+                                                <a href="https://www.apac.com.my/jba1063-sk-permas-jaya-1.html" target="_blank" style="color: #00ffe5; text-decoration: none;">
+                                                SK Permas Jaya 1
+                                                </a>
+                                               </p>
+                    <p><span>Year:</span> 2011 - 2016</p>
+                    <p><span>Achievements:</span></p>
+                    <ol>
+                        <li>UPSR 3A 3B</li>
+                        <li>Served as a Prefect</li>
+                        <li>Active in co-curricular activities</li>
+                        <li>Targeted as a straight-A student</li>
+                        <li>Won 3<sup>rd</sup> place in the Nilam reading program</li>
+                        <li>Represented the school as a dancer and won a state-level competition</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4>Kindergarten</h4>
+                    <p><span>Institution:</span> 
+                    <a href="https://maps.app.goo.gl/bekWGgMPpFxKTBeh9" target="_blank" class="location-icon" aria-label="View location on Google Maps"> <i class="fas fa-map-marker-alt"></i></a>
+                    <a href="https://pastipasirgudang.com/senarai-pastipg/" target="_blank" style="color: #00ffe5; text-decoration: none;">Tadika Pasti Al-Kauthar</a></p>
+                    <p><span>Year:</span> 2009-2010</p>
+                    <p><span>Achievements:</span></p>
+                    <ol>
+                        <li>Top 3 in class</li>
+                        <li>Won 1<sup>st</sup> place in a coloring competition</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4>Pre-Kindergarten</h4>
+                    <p><span>Institution:</span>
+                    <a href="https://maps.app.goo.gl/xRAj35k5SbPifnLaA" target="_blank" class="location-icon" aria-label="View location on Google Maps">
+                    <i class="fas fa-map-marker-alt"></i></a>
+                    <a href="https://malaysia.worldplaces.me/view-place/84351685-tadika-and-taska-as-syakirin.html" target="_blank" style="color: #00ffe5; text-decoration: none;">Tadika As-Syakirin</a></p>
+                    <p><span>Year:</span> 2008</p>
+                    <p><span>Achievements:</span></p>
+                    <ol>
+                        <li>Performed a nasheed</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+        <!-- Footer -->
+        <footer style="background-color: #2a1a59; color: #ffffff; padding: 30px 20px; font-family: 'Roboto', sans-serif;">
+        <div style="width: 100%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+
+      <!-- Logo & Toggle Like/Dislike -->
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <!-- Logo Image -->
+            <img src="Images/logowawa.png" alt="WAWALUVS Logo" style="width: 150px; height: 150px; object-fit: contain;">
+
+            <!-- Like/Dislike Toggle -->
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span id="toggleIcon" onclick="toggleLike()" style="font-size: 2em; cursor: pointer; color: #00ffe5;">👍🏻</span>
+            </div>
+        </div>
+
+
+        <!-- Contact Info -->
+        <div style="display: flex; align-items: flex-start; gap: 40px; flex-wrap: wrap;">
+            <!-- Get in Touch Section -->
+            <div style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 10px;">
+                <h3 style="margin-bottom: 10px; font-size: 1.2em; color: #00ffe5;">Get in Touch</h3>
+                <p style="font-size: 0.9em; color: #ffffff; margin: 0;">Email: <a href="mailto:wawawawa1403@gmail.com" style="color: #00ffe5; text-decoration: none;">wawawawa1403@gmail.com</a></p>
+                <p style="font-size: 0.9em; color: #ffffff; margin: 0;">Phone: <a href="tel:+60177221474" style="color: #00ffe5; text-decoration: none;">+6017 722 1474</a></p>
+            </div>
+
+            <!-- Instagram Section -->
+            <div style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 10px;">
+                <h3 style="margin-bottom: 10px; font-size: 1.2em; color: #00ffe5;">Follow Me</h3>
+                <a href="https://www.instagram.com/wawaluvs?igsh=OWRtMG9neHBtMTl6&utm_source=qr" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                    <img src="Images/logoig.jpg" alt="Instagram" style="width: 30px; height: 30px;">
+                    <p style="font-size: 1em; color: #ffffff; margin: 0;">@wawaluvs</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 20px; border-top: 1px solid #444; padding-top: 10px; text-align: center; font-size: 0.8em; color: #888888;">
+        © 2024 WAWALUVS. Designed with 💖
+    </div>
+</footer>
+
+<script>
+        window.addEventListener('load', function () {
+            const notification = document.getElementById('notification');
+            const sound = document.getElementById('notification-sound');
+
+            // Attempt to play sound after a short delay
+            setTimeout(() => {
+                sound.play().catch(error => {
+                    console.warn("Autoplay blocked:", error);
+                });
+            }, 500); // Adjust delay if needed
+
+            // Display notification
+            notification.style.opacity = 1;
+            notification.style.visibility = 'visible';
+
+            // Hide notification after 5 seconds
+            setTimeout(() => {
+                notification.style.opacity = 0;
+                notification.style.visibility = 'hidden';
+            }, 5000);
+        });
+    </script>
+
+ <script>
+    // Toggle Like/Dislike Icon
+    function toggleLike() {
+        const icon = document.getElementById('toggleIcon');
+        if (icon.textContent === '👍🏻') {
+            icon.textContent = '👎🏾'; // Switch to dislike
+            icon.style.color = '#ff007f'; // Change color to red/pink for dislike
+        } else {
+            icon.textContent = '👍🏻'; // Switch back to like
+            icon.style.color = '#00ffe5'; // Change color to blue for like
+        }
+    }
+</script>
+
+</body>
+</html>
+

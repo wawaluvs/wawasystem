@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAMILY ⋆｡°✩</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="nav.css">   
+    <style>
+        /* Basic Styles */
+      body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('Images/wallpaper.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    color: #f1f1f1;
+    overflow-x: hidden;
+     min-height: 100vh; 
+     display: flex;
+     flex-direction: column;
+}
+ 
+
+  .family-tree-container {
+            width: 90%;
+            margin: 50px auto;
+            padding: 30px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+
+        
+        /* Header Section */
+        .header {
+            margin-bottom: 1px;
+            text-align: center;
+            color: #ff007f;
+        }
+
+        .header h1 {
+            font-size: 4.0em;
+            margin-top: 95px;
+            color: #00ffe5;
+
+        }
+
+        .header h2 {
+            font-size: 1.2em;
+            margin-top: 8px;
+            font-weight: normal;
+            color: #ff007f;
+        }
+
+
+    /* Popup Styling */
+        .popup-ad {
+            visibility: hidden;
+            opacity: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 9999; /* Ensuring the popup is on top */
+        }
+
+        .popup-ad.show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .popup-content {
+            background: #fff;
+            border-radius: 10px;
+            padding: 0px;
+            position: relative;
+            z-index: 10000;
+            max-width: 700px;
+          max-height: 600px;
+            width: 80%;  /* Lebar ikut peratus, boleh sesuaikan */
+    height: auto; /* Tinggi ikut kandungan */
+            text-align: center;
+          overflow: hidden;
+        }
+
+        .popup-media {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: red;
+            color: #fff;
+            border: none;
+            font-size: 20px;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            z-index: 10001;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 1.7em;
+            color: #ff007f;
+            margin: 50px 0 10px;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            padding-bottom: 10px;
+        }
+
+        .family-tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .generation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .generation:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            bottom: -25px;
+            width: 100%;
+            height: 2px;
+            background: #00ffe5;
+        }
+
+     .family-member {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: left; /* Semua teks di kiri */
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-start; /* Selarikan teks ke kiri */
+    width: 300px;
+    margin: 0 12px;
+    height: 205px;
+    position: relative;
+}
+
+        .family-member:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+            transition: 0.3s;
+        }
+
+        .family-member h4 {
+            margin: 0 0 10px;
+            font-size: 1.3em;
+            color: #00ffe5; /* Highlighted for the family member title */
+        }
+
+        .family-member p {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+
+        /* Specific Colors */
+        .family-member p strong {
+            color: #ff007f; /* Pink for the labels */
+        }
+
+        .family-member p span {
+            color: white; /* Blue for the dynamic values */
+        }
+
+        .connector {
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: #00ffe5;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+
+        .generation:first-child .connector {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .generation {
+                flex-wrap: wrap;
+            }
+
+            .family-member {
+                margin: 15px 0;
+            }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .family-tree {
+                flex-direction: column;
+            }
+
+            .generation {
+                align-items: center;
+            }
+ 
+
+
+}
+     
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="Biodata.html">Biodata</a>
+    <a href="Experience.html">Experience</a>
+    <a href="Education.html">Education</a>
+    <a href="Family.html">Family</a>
+    <a href="Gallery.html">Gallery</a>
+</nav>
+
+ <!-- Popup Container -->
+ <div id="popupAd" class="popup-ad">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup()">×</button>
+            <img src="Images/shopeepopup.jpg" alt="Ad" class="popup-media">
+        </div>
+    </div>
+ 
+<!-- Family Container -->
+<div class="family-container">
+    <!-- Header -->
+    <div class="header">
+        <h1 style="margin-bottom:5px;">FAMILY</h1>
+        <h2 ><em>"Family is not an important thing. It's everything"</em></h2>
+    </div>
+
+    <!-- Family Section -->
+    <section id="family">
+        <h3 class="section-title">Family Tree</h3>
+
+          <!-- Family Tree -->
+    <div class="family-tree">
+
+        <!-- Grandparents -->
+        <div class="generation">
+            <div class="family-member">
+                <h4>GRANDFATHER</h4>
+                <p><strong>Name:</strong> <span>Muhammad Bin Abdullah</span></p>
+                <p><strong>Age:</strong> <span>99</span></p>
+                <p><strong>Nationality:</strong> <span>Japanese</span></p>
+            </div>
+            <div class="family-member">
+                <h4>GRANDMOTHER</h4>
+                <p><strong>Name:</strong> <span>Zamanah Binti Ahmad</span></p>
+                <p><strong>Age:</strong> <span>72</span></p>
+                <p><strong>Nationality:</strong> <span>Singaporean</span></p>
+            </div>
+        </div>
+
+        <!-- Parents -->
+        <div class="generation">
+            <div class="family-member">
+                <h4>FATHER</h4>
+                <p><strong>Name:</strong> <span>Muhammad Fadzil Bin Abidin</span></p>
+                <p><strong>Age:</strong> <span>42</span></p>
+                <p><strong>Nationality:</strong> <span>Malaysian</span></p>
+            </div>
+            <div class="family-member">
+                <h4>MOTHER</h4>
+                <p><strong>Name:</strong> <span>Syafina Hafizah Binti Muhammad</span></p>
+                <p><strong>Age:</strong> <span>44</span></p>
+                <p><strong>Nationality:</strong> <span>Malaysian</span></p>
+            </div>
+        </div>
+
+        <!-- Siblings -->
+        <div class="generation">
+            <div class="family-member">
+                <h4>OLDER SISTER</h4>
+                <p><strong>Name:</strong> <span>Syazwani Afrina</span></p>
+                <p><strong>Age:</strong> <span>23</span></p>
+                <p><strong>Nationality:</strong> <span>Malaysian</span></p>
+                <p><strong>Education:</strong> <span>Bachelor of Science in Architecture, UTM Skudai</span></p>
+            </div>
+            <div class="family-member">
+                <h4>YOUNGER BROTHER</h4>
+                <p><strong>Name:</strong> <span>Muhammad Amsyar</span></p>
+                <p><strong>Age:</strong> <span>19</span></p>
+                 <p><strong>Nationality:</strong> <span>Malaysian</span></p>
+                <p><strong>Education:</strong> <span>Diploma in Quality Engineering, UniKL Johor</span></p>
+            </div>
+            <div class="family-member">
+                <h4>YOUNGER SISTER</h4>
+                <p><strong>Name:</strong> <span>Siti Nurbatrisyia</span></p>
+                <p><strong>Age:</strong> <span>16</span></p>
+                 <p><strong>Nationality:</strong> <span>Malaysian</span></p>
+                <p><strong>Education:</strong> <span> High School in SMK Permas Jaya</span></p>
+            </div>
+            <div class="family-member">
+                <h4>YOUNGER BROTHER</h4>
+                <p><strong>Name:</strong> <span>Muhammad Addrisyah</span></p>
+                <p><strong>Age:</strong> <span>17</span></p>
+                 <p><strong>Nationality:</strong> <span>Malaysian</span></p>
+                <p><strong>Education:</strong> <span> High School in SMK Permas Jaya</span></p>
+            </div>
+
+        </div>
+    </div>
+
+    
+        </div>
+    </section>
+</div>
+
+
+       <!-- Footer -->
+       <footer style="background-color: #2a1a59; color: #ffffff; padding: 30px 20px; font-family: 'Roboto', sans-serif;">
+       <div style="width: 100%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+
+        <!-- Logo & Toggle Like/Dislike -->
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <!-- Logo Image -->
+            <img src="Images/logowawa.png" alt="WAWALUVS Logo" style="width: 150px; height: 150px; object-fit: contain;">
+
+            <!-- Like/Dislike Toggle -->
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span id="toggleIcon" onclick="toggleLike()" style="font-size: 2em; cursor: pointer; color: #00ffe5;">👍🏻</span>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div style="display: flex; align-items: flex-start; gap: 40px; flex-wrap: wrap;">
+            <!-- Get in Touch Section -->
+            <div style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 10px;">
+                <h3 style="margin-bottom: 10px; font-size: 1.2em; color: #00ffe5;">Get in Touch</h3>
+                <p style="font-size: 0.9em; color: #ffffff; margin: 0;">Email: <a href="mailto:wawawawa1403@gmail.com" style="color: #00ffe5; text-decoration: none;">wawawawa1403@gmail.com</a></p>
+                <p style="font-size: 0.9em; color: #ffffff; margin: 0;">Phone: <a href="tel:+60177221474" style="color: #00ffe5; text-decoration: none;">+6017 722 1474</a></p>
+            </div>
+  <!-- Instagram Section -->
+            <div style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 10px;">
+                <h3 style="margin-bottom: 10px; font-size: 1.2em; color: #00ffe5;">Follow Me</h3>
+                <a href="https://www.instagram.com/wawaluvs?igsh=OWRtMG9neHBtMTl6&utm_source=qr" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                    <img src="Images/logoig.jpg" alt="Instagram" style="width: 30px; height: 30px;">
+                    <p style="font-size: 1em; color: #ffffff; margin: 0;">@wawaluvs</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 20px; border-top: 1px solid #444; padding-top: 10px; text-align: center; font-size: 0.8em; color: #888888;">
+        © 2024 WAWALUVS. Designed with 💖
+    </div>
+</footer>
+  
+ <script>
+    // Toggle Like/Dislike Icon
+    function toggleLike() {
+        const icon = document.getElementById('toggleIcon');
+        if (icon.textContent === '👍🏻') {
+            icon.textContent = '👎🏾'; // Switch to dislike
+            icon.style.color = '#ff007f'; // Change color to red/pink for dislike
+        } else {
+            icon.textContent = '👍🏻'; // Switch back to like
+            icon.style.color = '#00ffe5'; // Change color to blue for like
+        }
+    }
+</script>
+
+<script>
+        window.onload = function () {
+            setTimeout(function () {
+                document.getElementById("popupAd").classList.add("show");
+            }, 3000); // Show after 3 seconds
+        };
+
+        function closePopup() {
+            document.getElementById("popupAd").classList.remove("show");
+        }
+    </script>
+
+</body>
+</html>

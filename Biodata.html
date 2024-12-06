@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIODATA ⋆｡°✩</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="nav.css">    
+
+    <style>
+        /* Basic Styles */
+        body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('Images/wallpaper.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    
+    background-attachment: fixed;
+    color: #f1f1f1;
+    overflow-x: hidden;
+}
+
+       
+        /* Main Content Container */
+        .biodata-container {
+            width: 100%;
+            margin-top: 125px;
+            padding: 20px 40px;
+            box-sizing: border-box;
+        }
+
+        .image-map {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px; /* Adjust space between image map and text */
+}
+
+.image-map img {
+    width: 20%; /* Adjust based on your preference */
+    height: 0%;
+}
+
+        /* Header Section */
+        .header {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #ff007f;
+        }
+
+         .header h1 {
+            font-size: 3em;
+            margin: 0;
+            color: #00ffe5;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 0.1em solid #00ffe5;
+            width: 0;
+            animation: typing 3s steps(15) forwards, blink 0.75s step-end infinite;
+        }
+
+       /* Typing Animation */
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 15ch;
+    }
+}
+
+/* Blinking Cursor Animation */
+@keyframes blink {
+    50% {
+        border-color: transparent; 
+    }
+    100% {
+        border-color: #00ffe5; 
+    }
+}
+    
+        .header h2 {
+            font-size: 1.2em;
+            font-weight: normal;
+            color: #ff007f;
+        }
+
+        /* Profile Image */
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #00ffe5;
+            margin-bottom: 20px;
+        }
+      
+/* Advanced Skills Table */
+.skills-table {
+    width: 100%;
+    margin-top: 40px;
+    border-collapse: collapse;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #141414; 
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8); 
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Hover Effect for Table */
+.skills-table:hover {
+    transform: none; 
+}
+
+/* Table Header */
+.skills-table th {
+    padding: 25px 15px;
+    background: linear-gradient(135deg, #ff007f, #00ffe5);
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 3px solid #00b3e6;
+    transition: background 0.4s ease-in-out;
+}
+
+/* Hover effect on header */
+.skills-table th:hover {
+    background: linear-gradient(135deg, #00ffe5, #ff007f);
+    cursor: pointer;
+}
+
+/* Table Cells */
+.skills-table td {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #f1f1f1;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid #333;
+    transition: background-color 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Highlight row on hover */
+.skills-table tr:hover td {
+    background: linear-gradient(135deg, #00b3e6, #00ffe5);
+    color: #1a1a1a;
+    box-shadow: 0 15px 30px rgba(0, 255, 255, 0.6);
+}
+
+/* Advanced Skill Bar Animation */
+.skills-table td .skill-bar {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skills-table td .skill-bar span {
+    display: block;
+    height: 100%;
+    background-color: #00ffe5;
+    transition: width 0.5s ease-in-out;
+}
+
+.skills-table td .skill-bar span[data-level="advanced"] {
+    width: 100%;
+}
+
+.skills-table td .skill-bar span[data-level="intermediate"] {
+    width: 70%;
+}
+
+.skills-table td .skill-bar span[data-level="beginner"] {
+    width: 40%;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .skills-table th, .skills-table td {
+        padding: 10px;
+        font-size: 1em;
+    }
+}
+    
+
+        /* Section Titles */
+        .section-title {
+            font-size: 1.8em;
+            color: #ff007f;
+            margin: 30px 0 10px;
+            font-weight: bold;
+            text-align: left;
+            border-bottom: 2px solid #00ffe5;
+            padding-bottom: 10px;
+        }
+
+        /* Section Content */
+        .details {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #f1f1f1;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        /* Section Cards */
+        .section-card {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            margin-bottom: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .section-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Education Section */
+        .education-list {
+            font-size: 1.1em;
+            margin-top: 15px;
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+        }
+
+        .education-item h4 {
+            color: #00ffe5;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .education-item p {
+            margin: 5px 0;
+            color: #f1f1f1;
+        }
+
+        .education-item span {
+            font-weight: bold;
+            color: #00ffe5;
+        }
+
+        /* List Styling */
+        .list {
+            font-size: 1.1em;
+            margin-top: 15px;
+        }
+
+        .list li {
+            margin-bottom: 10px;
+        }
+
+        .list li strong {
+            font-weight: bold;
+        }
+
+      .music-container {
+    display: flex; /* Enables flex layout */
+    align-items: center; /* Aligns items vertically in the center */
+    gap: 20px; /* Adds spacing between the image and details */
+}
+
+.music-image {
+    width: 255px;
+    height: 255px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0; /* Prevents the image from shrinking */
+}
+
+.music-details {
+    flex-grow: 1; /* Allows the details to take up the remaining space */
+}
+        
+     </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="Biodata.html">Biodata</a>
+    <a href="Experience.html">Experience</a>
+    <a href="Education.html">Education</a>
+    <a href="Family.html">Family</a>
+    <a href="Gallery.html">Gallery</a>
+</nav>
+
+<!-- Biodata Container -->
+<div class="biodata-container">
+    <!-- Header -->
+    <div class="header">
+    
+          <!-- Image with image map -->
+        <img src="Images/me.png" alt="Song Image" class="music-image" usemap="#sound-map">
+        
+        <!-- Image Map -->
+        <map name="sound-map">
+            <!-- Rectangular Area (extends upwards from the bottom) -->
+            <area shape="rect" coords="0,0,300,80" href="Images/mee.jpg" target="_blank" alt="Rectangle Area" title="Take a look at my pictures">
+            
+            <!-- Circle Area (extends downwards) -->
+            <area shape="circle" coords="127,191,127" href="Images/dean.jpg" target="_blank" alt="Circle Area" title="Take a look at my certificates">
+        </map>
+
+        <h1>SITI NURALWANI</h1>
+        <h2><em>"Fearless in Ambition, Relentless in Success"</em></h2>
+    </div>
+
+    <!-- Personal Information Section -->
+    <section id="personal-info" class="section-card">
+        <h3 class="section-title">Personal Information</h3>
+        <div class="details">
+            <p><strong>Date of Birth:</strong> 14 March 2004 </p>
+            <p><strong>Place of Birth:</strong> Hospital Penawar, Pasir Gudang  </p>
+            <p><strong>Address:</strong> 39, Jalan Kijang 4, Taman Scientex, 81700 Pasir Gudang, Johor</p>
+            <p><strong>Phone:</strong> 017-7221474</p>
+            <p><strong>Email:</strong> <a href="mailto:wawawawa1403@gmail.com">wawawawa1403@gmail.com</a></p>
+        </div>
+    </section>
+
+   <!-- Skills Section -->
+   <section id="skills" class="section-card">
+    <h3 class="section-title">Skills</h3>
+    <table class="skills-table">
+        <thead>
+            <tr>
+                <th>Skill</th>
+                <th>Competency Level</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                   <a href="https://www.theknowledgeacademy.com/blog/what-is-microsoft-word/" target="_blank" style="text-decoration: none;">
+                        <img src="Images/wordicon.png" alt="Microsoft Word" title="Microsoft Word" 
+                        style="width:36px; height:36px; border-radius:5px; border:2px solid #00ffe5;">
+                        <br>
+                        <span style="color:#f1f1f1;">Microsoft Word</span>
+                    </a>
+                </td>
+                <td>
+                    <div class="skill-bar">
+                        <span data-level="advanced"></span>
+                    </div>
+                    <div>Advanced</div>
+                </td>
+            </tr>
+            <tr>
+                   <td>
+                   <a href="https://testbook.com/computer-awareness/microsoft-powerpoint" target="_blank" style="text-decoration: none;">
+                        <img src="Images/ppicon.png" alt="Microsoft PowerPoint" title="Microsoft PowerPoint" 
+                        style="width:36px; height:36px; border-radius:5px; border:2px solid #00ffe5;">
+                        <br>
+                        <span style="color:#f1f1f1;">Microsoft PowerPoint</span>
+                    </a>
+                </td>
+                <td>
+                    <div class="skill-bar">
+                        <span data-level="advanced"></span>
+                    </div>
+                    <div>Advanced</div>
+                </td>
+            </tr>
+                  
+            <tr>
+                 <td>
+                   <a href="https://www.techtarget.com/searchenterprisedesktop/definition/Excel" target="_blank" style="text-decoration: none;">
+                        <img src="Images/excelicon.png" alt="Microsoft Excel" title="Microsoft Excel" 
+                        style="width:36px; height:36px; border-radius:5px; border:2px solid #00ffe5;">
+                        <br>
+                        <span style="color:#f1f1f1;">Microsoft Excel</span>
+                    </a>
+                </td>
+
+                <td>
+                    <div class="skill-bar">
+                        <span data-level="intermediate"></span>
+                    </div>
+                    <div>Intermediate</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <a href="https://www.w3schools.com/" target="_blank" style="text-decoration: none;">
+                        <img src="Images/htmlcssicon.jpg" alt="HTML & CSS" title="HTML & CSS" 
+                        style="width:45px; height:36px; border-radius:5px; border:2px solid #00ffe5;">
+                        <br>
+                        <span style="color:#f1f1f1;">HTML & CSS</span>
+                    </a>
+                </td>
+
+
+                <td>
+                    <div class="skill-bar">
+                        <span data-level="beginner"></span>
+                    </div>
+                    <div>Beginner</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <!-- Favourite Food Section -->
+    <section id="favourites" class="section-card">
+        <h3 class="section-title">Favourite Food</h3>
+        <ul class="list">
+            <li><strong>Food:</strong>
+                <ul>
+                    <li>Caviar</li>
+                    <li>Mac and Cheese</li>
+                    <li>Spaghetti Carbonara</li>                    
+                </ul>
+            </li>
+            <li><strong>Drinks:</strong>
+                <ul>
+                    <li>Hot Chocolate</li>
+                    <li>Milkshake Chocolate</li>
+                    <li>Strawberry Smoothie</li>                                     
+                </ul>
+            </li>
+            <li><strong>Desserts:</strong>
+                <ul>
+                    <li>Brownies</li>
+                    <li>Chocolate Cake</li>
+                    <li>Ice Cream Cake</li>                    
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Hobby Section -->
+    <section id="hobbies" class="section-card">
+        <h3 class="section-title">Hobbies</h3>
+        <ul class="list">
+            <li><strong>Travelling</strong></li>
+            <li><strong>Shopping</strong></li>
+            <li><strong>Talking</strong></li>
+        </ul>
+    </section>
+
+  
+<!-- Music Section -->
+<section id="music" class="section-card">
+    <h3 class="section-title">Favorite Song</h3>
+    <div class="music-container">
+        <!-- Image -->
+        <img src="Images/theidol.jpg" alt="Song Image" class="music-image">
+        
+        <!-- Music Details -->
+        <div class="music-details">
+            <p><strong>Song Name:</strong> One of The Girls</p>
+            <p><strong>Artist:</strong> The Weeknd, Jennie Kim & Lily-Rose Depp</p>
+            <audio controls>
+                <source src="Images/Oneofthegirls.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+
+
+        <!-- Image -->
+        <img src="Images/metro.jpg" alt="Song Image" class="music-image">
+        
+        <!-- Music Details -->
+        <div class="music-details">
+            <p><strong>Song Name:</strong> Too Many Nights </p>
+            <p><strong>Artist:</strong> Metro Boomin ft. Don Toliver</p>
+            <audio controls>
+                <source src="Images/Toomanynights.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    </div>
+</section>
+
+  </div>
+    </section>
+
+</div>
+
+      
+        <!-- Footer -->
+        <footer style="background-color: #2a1a59; color: #ffffff; padding: 30px 20px; font-family: 'Roboto', sans-serif;">
+        <div style="width: 100%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+
+         <!-- Logo & Toggle Like/Dislike -->
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <!-- Logo Image -->
+            <img src="Images/logowawa.png" alt="WAWALUVS Logo" style="width: 150px; height: 150px; object-fit: contain;">
+
+            <!-- Like/Dislike Toggle -->
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span id="toggleIcon" onclick="toggleLike()" style="font-size: 2em; cursor: pointer; color: #00ffe5;">👍🏻</span>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div style="display: flex; align-items: flex-start; gap: 40px; flex-wrap: wrap;">
+            <!-- Get in Touch Section -->
+            <div style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 10px;">
+                <h3 style="margin-bottom: 10px; font-size: 1.2em; color: #00ffe5;">Get in Touch</h3>
+                <p style="font-size: 0.9em; color: #ffffff; margin: 0;">Email: <a href="mailto:wawawawa1403@gmail.com" style="color: #00ffe5; text-decoration: none;">wawawawa1403@gmail.com</a></p>
+                <p style="font-size: 0.9em; color: #ffffff; margin: 0;">Phone: <a href="tel:+60177221474" style="color: #00ffe5; text-decoration: none;">+6017 722 1474</a></p>
+            </div>
+
+            <!-- Instagram Section -->
+            <div style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 10px;">
+                <h3 style="margin-bottom: 10px; font-size: 1.2em; color: #00ffe5;">Follow Me</h3>
+                <a href="https://www.instagram.com/wawaluvs?igsh=OWRtMG9neHBtMTl6&utm_source=qr" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                    <img src="Images/logoig.jpg" alt="Instagram" style="width: 30px; height: 30px;">
+                    <p style="font-size: 1em; color: #ffffff; margin: 0;">@wawaluvs</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 20px; border-top: 1px solid #444; padding-top: 10px; text-align: center; font-size: 0.8em; color: #888888;">
+        © 2024 WAWALUVS. Designed with 💖
+    </div>
+</footer>
+ <script>
+    // Toggle Like/Dislike Icon
+    function toggleLike() {
+        const icon = document.getElementById('toggleIcon');
+        if (icon.textContent === '👍🏻') {
+            icon.textContent = '👎🏾'; // Switch to dislike
+            icon.style.color = '#ff007f'; // Change color to red/pink for dislike
+        } else {
+            icon.textContent = '👍🏻'; // Switch back to like
+            icon.style.color = '#00ffe5'; // Change color to blue for like
+        }
+    }
+</script>
+
+   
+</body>
+</html>

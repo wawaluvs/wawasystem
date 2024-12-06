@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GALLERY ⋆｡°✩</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="nav.css">   
+    <style>
+
+         /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+             background: url('Images/wallpaper.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    color: #f1f1f1;
+    overflow-x: hidden;
+     min-height: 100vh; 
+     display: flex;
+     flex-direction: column;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+         }
+
+        /* Main Content */
+        .gallery-container {
+            width: 100%;
+            padding: 50px 20px; 
+            margin-top: 80px;
+            box-sizing: border-box;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3em; 
+            color: #00ffe5; 
+            text-transform: uppercase;
+            font-weight: 700;
+            margin: 0; 
+            letter-spacing: 2px; 
+        }
+
+        .header h2 {
+            font-size: 1.2em; 
+            color: #ff007f;
+            font-style: italic;
+            margin-top: 10px; 
+        }
+
+        /* Image Gallery Section */
+        .gallery-section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #ff007f;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        /* Train-Like Image Animation - Train 1 */
+        .train1 {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 50px;
+            animation: moveTrain1 20s linear infinite;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .train1 img {
+            width: 500px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Train-Like Image Animation - Train 2 */
+        .train2 {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 50px;
+            animation: moveTrain2 15s linear infinite; 
+            overflow: hidden;
+        }
+
+        .train2 img {
+            width: 500px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Image Hover Effect */
+        .train1 img:hover,
+        .train2 img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Animation Keyframes */
+        @keyframes moveTrain1 {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes moveTrain2 {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+       /* Click Here Button */
+        .click-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .click-button a {
+            background-color: #ff007f;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .click-button a:hover {
+            background-color: #00ffe5;
+            color: #4b0082;
+        }
+
+        /* Video Container */
+        .video-container {
+            display: none; 
+            flex-direction: column;
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+        }
+
+        
+        .video-wrapper {
+            position: relative;
+            width: 50%;
+            height: 100%;
+            margin: 0 auto; 
+            scroll-snap-align: start;
+        }
+
+        video {
+            width: 100%;
+            height: 90%;
+            object-fit: cover;
+        }
+
+         /* Video Container */
+        .video-container {
+            display: none; 
+            flex-direction: column;
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 50%;
+            height: 95%;
+            scroll-snap-align: start;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+       /* Video Overlay */
+.video-overlay {
+    position: absolute;
+    top: 0px; 
+    left: 0px;
+    display: flex; 
+    align-items: center; 
+    justify-content: left; 
+    gap: 5px; 
+    z-index: 5; 
+    padding: 10px;
+    border-radius: 8px; 
+}
+
+/* Logo Image with Thin Border */
+.video-overlay img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: solid 0.25px black;  
+
+/* Text Styles */
+.video-overlay h3 {
+    font-size: 15px;
+    margin: 0;
+    color: #fff;
+}
+
+        /* Actions */
+        .actions {
+            position: absolute;
+            bottom: 100px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 10;
+        }
+
+        .actions button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5em;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .actions button span {
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+    color: #fff; 
+}
+
+        /* Actions */
+        .actions {
+            position: absolute;
+            bottom: 100px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 10;
+        }
+
+        .actions button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5em;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .actions button span {
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+
+          
+      </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="Biodata.html">Biodata</a>
+    <a href="Experience.html">Experience</a>
+    <a href="Education.html">Education</a>
+    <a href="Family.html">Family</a>
+    <a href="Gallery.html">Gallery</a>
+</nav>
+
+<!-- Gallery Section -->
+<div class="gallery-container">
+    <!-- Header -->
+    <div class="header">
+        <h1>Gallery</h1>
+        <h2><em>"Art speaks what words can't"</em></h2>
+    </div>
+
+    <!-- Childhood Memories Section -->
+    <div class="gallery-section">
+        <h2 class="section-title">Childhood Memories</h2>
+
+        <!-- Train 1: Images 1-3 -->
+        <div class="train1">
+            <img src="Images/c1.jpg" alt="Childhood">
+            <img src="Images/c2.jpg" alt="Childhood">
+            <img src="Images/c7.jpg" alt="Childhood">
+        </div>
+
+        <!-- Train 2: Images 4-6 -->
+        <div class="train2">
+            <img src="Images/c10.jpg" alt="Childhood">
+            <img src="Images/c8.jpg" alt="Childhood">
+            <img src="Images/c9.jpg" alt="Childhood">
+
+        </div>
+    </div>
+
+
+    <!-- Friends Section -->
+    <div class="gallery-section">
+        <h2 class="section-title">Oops! That’s Us</h2>
+        <div class="train1">
+            <img src="Images/f1.jpg" alt="Friends">
+            <img src="Images/f2.jpg" alt="Friends">
+            <img src="Images/f3.jpg" alt="Friends">
+                       
+        </div>
+
+         <!-- Train 2: Images 4-6 -->
+         <div class="train2">
+            <img src="Images/f6.jpg" alt="Friends">
+            <img src="Images/f4.jpg" alt="Friends">
+            <img src="Images/f7.jpg" alt="Friends">
+
+        </div>
+
+    </div>
+
+ <!-- Click Here Button -->
+<div class="click-button">
+    <a href="#video-section" onclick="showVideos()">Click here to watch the video</a>
+</div>
+
+<!-- Video Section -->
+<div class="video-container" id="video-section">
+   <!-- Video 1 -->
+<div class="video-wrapper">
+    <video controls loop>
+        <source src="Images/fvideo2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay">
+        <img src="Images/logowawa.png" alt="WAWALUVS Logo">
+        <h3>@wawalurves</h3>
+    </div>
+    <p>A beautiful moment to cherish.</p>
+    <div class="actions">
+        <button>
+            ❤️
+            <span>300</span>
+        </button>
+        <button>
+            💬
+            <span>125</span>
+        </button>
+        <button>
+            ↗
+            <span>Share</span>
+        </button>
+    </div>
+</div>
+
+
+ <!-- Video 2 -->
+<div class="video-wrapper">
+    <video controls  loop>
+        <source src="Images/fvideo.MP4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay">
+        <img src="Images/logowawa.png" alt="WAWALUVS Logo">
+        <h3>@wawalurves</h3>
+    </div>
+    <p>A beautiful moment to cherish.</p>
+    <div class="actions">
+        <button>
+            ❤️
+            <span>200</span>
+        </button>
+        <button>
+            💬
+            <span>20</span>
+        </button>
+        <button>
+            ↗
+            <span>Share</span>
+        </button>
+    </div>
+</div>
+
+
+    <!-- Video 3 -->
+    <div class="video-wrapper">
+    <video controls loop>
+        <source src="Images/fvideo.MP4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay">
+        <img src="Images/logowawa.png" alt="WAWALUVS Logo">
+        <h3>@wawalurves</h3>
+    </div>
+    <p>A beautiful moment to cherish.</p>
+    <div class="actions">
+        <button>
+            ❤️
+            <span>100</span>
+        </button>
+        <button>
+            💬
+            <span>25</span>
+        </button>
+        <button>
+            ↗
+            <span>Share</span>
+        </button>
+    </div>
+</div>
+
+<script>
+    function showVideos() {
+        const videoContainer = document.getElementById('video-section');
+        videoContainer.style.display = 'flex';
+        videoContainer.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+ </div>
+    </section>
+
+</div>
+
+
+
+        <!-- Footer -->
+        <footer style="background-color: #2a1a59; color: #ffffff; padding: 30px 20px; font-family: 'Roboto', sans-serif;">
+        <div style="width: 100%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+
+       <!-- Logo & Toggle Like/Dislike -->
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <!-- Logo Image -->
+            <img src="Images/logowawa.png" alt="WAWALUVS Logo" style="width: 150px; height: 150px; object-fit: contain;">
+
+            <!-- Like/Dislike Toggle -->
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span id="toggleIcon" onclick="toggleLike()" style="font-size: 2em; cursor: pointer; color: #00ffe5;">👍🏻</span>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div style="display: flex; align-items: flex-start; gap: 40px; flex-wrap: wrap;">
+            <!-- Get in Touch Section -->
+            <div style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 10px;">
+                <h3 style="margin-bottom: 10px; font-size: 1.2em; color: #00ffe5;">Get in Touch</h3>
+                <p style="font-size: 0.9em; color: #ffffff; margin: 0;">Email: <a href="mailto:wawawawa1403@gmail.com" style="color: #00ffe5; text-decoration: none;">wawawawa1403@gmail.com</a></p>
+                <p style="font-size: 0.9em; color: #ffffff; margin: 0;">Phone: <a href="tel:+60177221474" style="color: #00ffe5; text-decoration: none;">+6017 722 1474</a></p>
+            </div>
+
+            <!-- Instagram Section -->
+            <div style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 10px;">
+                <h3 style="margin-bottom: 10px; font-size: 1.2em; color: #00ffe5;">Follow Me</h3>
+                <a href="https://www.instagram.com/wawaluvs?igsh=OWRtMG9neHBtMTl6&utm_source=qr" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                    <img src="Images/logoig.jpg" alt="Instagram" style="width: 30px; height: 30px;">
+                    <p style="font-size: 1em; color: #ffffff; margin: 0;">@wawaluvs</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 20px; border-top: 1px solid #444; padding-top: 10px; text-align: center; font-size: 0.8em; color: #888888;">
+        © 2024 WAWALUVS. Designed with 💖
+    </div>
+</footer>
+
+ <script>
+    // Toggle Like/Dislike Icon
+    function toggleLike() {
+        const icon = document.getElementById('toggleIcon');
+        if (icon.textContent === '👍🏻') {
+            icon.textContent = '👎🏾'; // Switch to dislike
+            icon.style.color = '#ff007f'; // Change color to red/pink for dislike
+        } else {
+            icon.textContent = '👍🏻'; // Switch back to like
+            icon.style.color = '#00ffe5'; // Change color to blue for like
+        }
+    }
+</script>
+
+
+</body>
+</html>

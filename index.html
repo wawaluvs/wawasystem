@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WAWA'S WEBSITE ⋆｡°✩</title>
+    <link rel="icon" type="image/png" href=" Images/logowawa.png">                             
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="nav.css">    
+    <style>
+       
+        /* Basic Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #f1f1f1;
+            overflow-x: hidden;
+        }
+
+
+        
+       /* Clock */
+       .clock {
+            position: fixed;
+            top: 8px;  /* Adjust this to align closer to the navbar */
+            right: 20px;
+            font-size: 1.5em;
+            color: #00ffe5;
+            z-index: 1001;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            z-index: 0;
+            flex-direction: column;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            animation: cubeRotate 5s linear infinite;
+        }
+
+        .hero h2 {
+            font-size: 1.8em;
+            margin: 10px 0 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            color: #ff007f;
+        }
+
+        @keyframes cubeRotate {
+            0% { transform: rotateY(0deg) rotateX(10deg); }
+            25% { transform: rotateY(90deg) rotateX(10deg); }
+            50% { transform: rotateY(180deg) rotateX(10deg); }
+            75% { transform: rotateY(270deg) rotateX(10deg); }
+            100% { transform: rotateY(360deg) rotateX(10deg); }
+        }
+
+        /* Background Animation */
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(270deg, #4b0082, #000000, #004d00, #003366);
+            background-size: 600% 600%;
+            animation: gradientMove 20s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #f1f1f1;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            max-width: 900px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.5s;
+        }
+
+        section:hover {
+            transform: scale(1.05);
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ff007f;
+            transition: color 0.3s;
+        }
+
+        section h2:hover {
+            color: #00ffe5;
+        }
+
+        section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<!-- Background Animation -->
+<div class="background-animation"></div>
+
+<!-- Clock -->
+<div class="clock" id="clock">00:00:00</div>
+
+<!-- Navigation Bar -->
+<nav>
+    
+    <a href="#biodata">Biodata</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#family">Family</a>
+    <a href="#gallery">Gallery</a>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero" id="home">
+    <h1>Welcome!</h1>
+    <h2>Uncover My Story</h2>
+</div>
+
+<!-- Biodata Section -->
+<section id="biodata">
+    <h2><a href="Biodata.html">Biodata</a></h2>
+    <p>"Fearless in Ambition, Relentless in Success"</p>
+</section>
+
+<!-- Experience Section -->
+<section id="experience">
+    <h2><a href="Experience.html">Experience</a></h2>
+    <p>"The only source of knowledge is experience"</p>
+</section>
+
+<!-- Education Section -->
+<section id="education">
+    <h2><a href="Education.html">Education</a></h2>
+    <p>"The Journey of Knowledge Never Ends"</p>
+</section>
+
+<!-- Family Section -->
+<section id="family">
+    <h2><a href="Family.html">Family</a></h2>
+    <p>"Family is not an important thing. It's everything"</p>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery">
+    <h2><a href="Gallery.html">Gallery</a></h2>
+    <p>"Art speaks what words can't"</p>
+</section>
+
+</div>
+   </section>
+
+</div>
+
+      
+<!-- Footer -->
+<footer style="background-color: #2a1a59; color: #ffffff; padding: 10px 10px; font-family: 'Roboto', sans-serif;">
+    <div style="width: 100%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">              <!-- Logo & Toggle Like/Dislike -->
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <!-- Logo Image -->
+            <img src="Images/logowawa.png" alt="WAWALUVS Logo" style="width: 150px; height: 150px; object-fit: contain;">
+
+            <!-- Like/Dislike Toggle -->
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span id="toggleIcon" onclick="toggleLike()" style="font-size: 2em; cursor: pointer; color: #00ffe5;">👍🏻</span>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div style="display: flex; align-items: flex-start; gap: 40px; flex-wrap: wrap;">
+            <!-- Get in Touch Section -->
+            <div style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 10px;">
+                <h3 style="margin-bottom: 10px; font-size: 1.2em; color: #00ffe5;">Get in Touch</h3>
+                <p style="font-size: 0.9em; color: #ffffff; margin: 0;">Email: <a href="mailto:wawawawa1403@gmail.com" style="color: #00ffe5; text-decoration: none;">wawawawa1403@gmail.com</a></p>
+                <p style="font-size: 0.9em; color: #ffffff; margin: 0;">Phone: <a href="tel:+60177221474" style="color: #00ffe5; text-decoration: none;">+6017 722 1474</a></p>
+            </div>
+
+            <!-- Instagram Section -->
+            <div style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 10px;">
+                <h3 style="margin-bottom: 10px; font-size: 1.2em; color: #00ffe5;">Follow Me</h3>
+                <a href="https://www.instagram.com/wawaluvs?igsh=OWRtMG9neHBtMTl6&utm_source=qr" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                    <img src="Images/logoig.jpg" alt="Instagram" style="width: 30px; height: 30px;">
+                    <p style="font-size: 1em; color: #ffffff; margin: 0;">@wawaluvs</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 20px; border-top: 1px solid #444; padding-top: 10px; text-align: center; font-size: 0.8em; color: #888888;">
+        © 2024 WAWALUVS. Designed with 💖
+    </div>
+</footer>
+
+<script>
+    // Toggle Like/Dislike Icon
+    function toggleLike() {
+        const icon = document.getElementById('toggleIcon');
+        if (icon.textContent === '👍🏻') {
+            icon.textContent = '👎🏾'; // Switch to dislike
+            icon.style.color = '#ff007f'; // Change color to red/pink for dislike
+        } else {
+            icon.textContent = '👍🏻'; // Switch back to like
+            icon.style.color = '#00ffe5'; // Change color to blue for like
+        }
+    }
+</script>
+
+
+<script>
+    // Clock Functionality
+    function updateClock() {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString();
+        document.getElementById('clock').innerText = timeString;
+    }
+    setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>

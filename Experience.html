@@ -98,7 +98,8 @@
             grid-column: span 2; 
             margin-top: 20px; 
            padding: 20px;
-            margin-right: 20px;        }
+            margin-right: 20px;      
+        }
 
         /* Custom Star Marker */
         .experience-item ul li {
@@ -115,11 +116,8 @@
             top: 50%; 
             transform: translateY(-50%) scale(1.5);  
             font-size: 16px;
-            color: #ff007f;  /* Star color */
+            color: #ff007f;  
         }
-
-
-
 
         .thumbnail {
             width: 100%;
@@ -315,11 +313,11 @@
     function toggleLike() {
         const icon = document.getElementById('toggleIcon');
         if (icon.textContent === '👍🏻') {
-            icon.textContent = '👎🏾'; // Switch to dislike
-            icon.style.color = '#ff007f'; // Change color to red/pink for dislike
+            icon.textContent = '👎🏾';
+            icon.style.color = '#ff007f'; 
         } else {
-            icon.textContent = '👍🏻'; // Switch back to like
-            icon.style.color = '#00ffe5'; // Change color to blue for like
+            icon.textContent = '👍🏻'; 
+            icon.style.color = '#00ffe5'; 
         }
     }
 </script>

@@ -69,7 +69,7 @@
             justify-content: center;
             align-items: center;
             transition: opacity 0.3s ease-in-out;
-            z-index: 9999; /* Ensuring the popup is on top */
+            z-index: 9999; 
         }
 
         .popup-ad.show {
@@ -84,9 +84,9 @@
             position: relative;
             z-index: 10000;
             max-width: 700px;
-          max-height: 600px;
-            width: 80%;  /* Lebar ikut peratus, boleh sesuaikan */
-    height: auto; /* Tinggi ikut kandungan */
+            max-height: 600px;
+            width: 80%;  
+            height: auto; 
             text-align: center;
           overflow: hidden;
         }
@@ -152,10 +152,10 @@
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    text-align: left; /* Semua teks di kiri */
+    text-align: left; 
     display: flex; 
     flex-direction: column;
-    align-items: flex-start; /* Selarikan teks ke kiri */
+    align-items: flex-start; 
     width: 300px;
     margin: 0 12px;
     height: 205px;
@@ -172,7 +172,7 @@
         .family-member h4 {
             margin: 0 0 10px;
             font-size: 1.3em;
-            color: #00ffe5; /* Highlighted for the family member title */
+            color: #00ffe5; 
         }
 
         .family-member p {
@@ -182,11 +182,11 @@
 
         /* Specific Colors */
         .family-member p strong {
-            color: #ff007f; /* Pink for the labels */
+            color: #ff007f; 
         }
 
         .family-member p span {
-            color: white; /* Blue for the dynamic values */
+            color: white; 
         }
 
         .connector {
@@ -315,14 +315,14 @@
             <div class="family-member">
                 <h4>YOUNGER SISTER</h4>
                 <p><strong>Name:</strong> <span>Siti Nurbatrisyia</span></p>
-                <p><strong>Age:</strong> <span>16</span></p>
+                <p><strong>Age:</strong> <span>17</span></p>
                  <p><strong>Nationality:</strong> <span>Malaysian</span></p>
                 <p><strong>Education:</strong> <span> High School in SMK Permas Jaya</span></p>
             </div>
             <div class="family-member">
                 <h4>YOUNGER BROTHER</h4>
                 <p><strong>Name:</strong> <span>Muhammad Addrisyah</span></p>
-                <p><strong>Age:</strong> <span>17</span></p>
+                <p><strong>Age:</strong> <span>16</span></p>
                  <p><strong>Nationality:</strong> <span>Malaysian</span></p>
                 <p><strong>Education:</strong> <span> High School in SMK Permas Jaya</span></p>
             </div>
@@ -380,11 +380,11 @@
     function toggleLike() {
         const icon = document.getElementById('toggleIcon');
         if (icon.textContent === '👍🏻') {
-            icon.textContent = '👎🏾'; // Switch to dislike
-            icon.style.color = '#ff007f'; // Change color to red/pink for dislike
+            icon.textContent = '👎🏾';
+            icon.style.color = '#ff007f'; 
         } else {
-            icon.textContent = '👍🏻'; // Switch back to like
-            icon.style.color = '#00ffe5'; // Change color to blue for like
+            icon.textContent = '👍🏻';
+            icon.style.color = '#00ffe5'; 
         }
     }
 </script>
@@ -393,7 +393,7 @@
         window.onload = function () {
             setTimeout(function () {
                 document.getElementById("popupAd").classList.add("show");
-            }, 3000); // Show after 3 seconds
+            }, 3000); 
         };
 
         function closePopup() {
